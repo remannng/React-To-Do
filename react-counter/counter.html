@@ -17,16 +17,21 @@
         constructor(props) {
           super(props);
           this.state = {
-            number: 1
+            number: 1,
+            section: 2,
+            checkpoint: 4
           }
         }
 
         render() {
           return (
             <div>
+              <h1>Welcome to {this.props.studentName}'s Counter Project</h1>
               <img src={this.props.image} alt="Bloc Logo"/>
               <h2>Current program: {this.props.label}</h2>
               <h3>Current week: {this.state.number}</h3>
+              <h3>Current section: {this.state.section}</h3>
+              <h3>Current checkpoint: {this.state.checkpoint}</h3>
               <p>Current Date: {this.props.date.toLocaleDateString()}</p>
             </div>
           );
@@ -39,8 +44,10 @@
       }
 
       Counter.defaultProps = {
-        label: "Web Developer Track"
+        label: "Web Developer Track",
+        studentName: "Ryan"
       }
+
 
       ReactDOM.render(
         <Counter
